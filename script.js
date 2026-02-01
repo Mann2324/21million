@@ -1,49 +1,60 @@
-// BASE VALUES
-let price = 0.0125;        // starting price
-let holders = 1250;
-const totalSupply = 21000000;
+let price = 0.012;
+let holders = 1200;
+const supply = 21000000;
 
-// PRICE UPDATE (every 2 seconds)
+const priceEl = document.getElementById("price");
+const changeEl = document.getElementById("change");
+const holdersEl = document.getElementById("holders");
+const marketcapEl = document.getElementById("marketcap");
+
+const ctx = document.getElementById('priceChart');
+
+let labels = [];
+let data = [];
+
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: labels,
+    datasets: [{
+      data: data,
+      borderColor: '#7c8cff',
+      borderWidth: 2,
+      tension: 0.4
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: { x: { display: false }, y: { display: false } }
+  }
+});
+
 function updatePrice() {
-  let volatility = (Math.random() * 0.002) - 0.001; // small up/down
-  let trend = 0.00015; // upward bias
+  let oldPrice = price;
+  let move = (Math.random() - 0.45) * 0.002;
+  price += move;
+  if (price < 0.002) price = 0.002;
 
-  price = price + volatility + trend;
+  let change = ((price - oldPrice) / oldPrice) * 100;
 
-  if (price < 0.001) price = 0.001;
+  priceEl.textContent = price.toFixed(4);
+  changeEl.textContent = `${change >= 0 ? "+" : ""}${change.toFixed(2)}%`;
+  changeEl.style.color = change >= 0 ? "#22c55e" : "#ef4444";
 
-  document.getElementById("price").innerText = price.toFixed(4);
+  holders += Math.floor(Math.random() * 2);
+  holdersEl.textContent = holders.toLocaleString();
 
-  // MARKET CAP
-  let marketCap = (price * totalSupply).toFixed(0);
-  document.getElementById("marketcap").innerText =
-    "$" + marketCap.toLocaleString();
+  marketcapEl.textContent =
+    "$" + Math.floor(price * supply).toLocaleString();
+
+  labels.push("");
+  data.push(price.toFixed(4));
+  if (data.length > 30) {
+    data.shift();
+    labels.shift();
+  }
+
+  chart.update();
 }
 
-// HOLDERS GROWTH
-function updateHolders() {
-  holders += Math.floor(Math.random() * 3); // slow organic growth
-  document.getElementById("holders").innerText =
-    holders.toLocaleString();
-}
-
-// COUNT-UP ANIMATION
-function animateSupply() {
-  let count = 0;
-  let interval = setInterval(() => {
-    count += 210000;
-    document.getElementById("supply").innerText =
-      count.toLocaleString();
-
-    if (count >= totalSupply) {
-      document.getElementById("supply").innerText =
-        totalSupply.toLocaleString();
-      clearInterval(interval);
-    }
-  }, 50);
-}
-
-// RUN
-animateSupply();
 setInterval(updatePrice, 2000);
-setInterval(updateHolders, 3000);
