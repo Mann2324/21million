@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>21MILLION – The Future of Scarcity</title>
+  <meta charset="UTF-8">
+  <title>21MILLION | Digital Scarcity</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>21MILLION</h1>
-    <p>The Future of Scarcity</p>
+<header>
+  <h1>21MILLION</h1>
+  <span class="tag">Scarcity. Power. Future.</span>
+</header>
 
-    <div class="price-box">
-      <span>$</span><span id="price">0.0000</span>
+<section class="price-section">
+  <div class="price-card">
+    <h2>21MILLION / USD</h2>
+    <div class="price">
+      $<span id="price">0.0000</span>
     </div>
+    <div id="change" class="change">+0.00%</div>
+  </div>
+</section>
 
-    <div class="stats">
-      <div>
-        <h2 id="supply">0</h2>
-        <p>Total Supply</p>
-      </div>
-      <div>
-        <h2 id="holders">0</h2>
-        <p>Holders</p>
-      </div>
-      <div>
-        <h2 id="marketcap">$0</h2>
-        <p>Market Cap</p>
-      </div>
-    </div>
-  </section>
+<section class="dashboard">
+  <div class="card">
+    <p>Total Supply</p>
+    <h3 id="supply">21,000,000</h3>
+  </div>
+  <div class="card">
+    <p>Market Cap</p>
+    <h3 id="marketcap">$0</h3>
+  </div>
+  <div class="card">
+    <p>Holders</p>
+    <h3 id="holders">1,200</h3>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section class="chart-section">
+  <canvas id="priceChart"></canvas>
+</section>
+
+<section class="info">
+  <div class="info-card">
+    <h3>About Coin</h3>
+    <p>
+      21MILLION is a fixed-supply digital asset inspired by absolute scarcity.
+      No inflation. No minting. Only 21 million — forever.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h3>Founder</h3>
+    <p>
+      Founded by <strong>:contentReference[oaicite:1]{index=1}</strong>,  
+      focused on building a premium, transparent, community-driven crypto ecosystem.
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 • 21MILLION • All Rights Reserved
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
+
