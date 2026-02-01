@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>21Million | Blockchain Infrastructure</title>
+  <title>21Million — Blockchain Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- CSS -->
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,120 +23,89 @@
   <div class="logo">21Million</div>
   <nav>
     <a href="#about">About</a>
-    <a href="#technology">Technology</a>
-    <a href="#ecosystem">Ecosystem</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#careers">Careers</a>
     <a href="#legal">Legal</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Building Trust in the Decentralized Economy</h1>
-  <p>
-    21Million is a blockchain-focused technology company creating
-    secure, transparent, and scalable digital financial systems.
+  <h1 class="reveal">Building Trust in the Decentralized Economy</h1>
+  <p class="reveal delay">
+    Institutional-grade blockchain and cryptocurrency infrastructure
+    designed for security, transparency, and long-term value.
   </p>
-
-  <div class="cta">
-    <button class="primary">Explore Platform</button>
-    <button class="secondary">Whitepaper</button>
-  </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section reveal">
   <h2>About 21Million</h2>
   <p>
-    21Million is inspired by the fundamental principles of blockchain:
-    transparency, decentralization, and long-term value creation.
-    Our mission is to design reliable crypto infrastructure that
-    supports responsible innovation.
+    21Million is a blockchain-focused technology company inspired by
+    decentralization, transparency, and sustainable value creation.
   </p>
 </section>
 
-<!-- TECHNOLOGY -->
-<section id="technology" class="section dark">
-  <h2>Core Technology</h2>
+<!-- DASHBOARD -->
+<section id="dashboard" class="section dark reveal">
+  <h2>Network Dashboard</h2>
 
-  <div class="grid">
-    <div class="card">
-      <i class="fa-solid fa-cubes"></i>
-      <h3>Decentralized Architecture</h3>
-      <p>
-        Distributed network design that removes single points of
-        failure and increases resilience.
-      </p>
-    </div>
-
-    <div class="card">
-      <i class="fa-solid fa-lock"></i>
-      <h3>Security First</h3>
-      <p>
-        Cryptographic security models with continuous monitoring
-        and best-practice standards.
-      </p>
-    </div>
-
-    <div class="card">
-      <i class="fa-solid fa-bolt"></i>
-      <h3>Efficient Performance</h3>
-      <p>
-        Optimized systems designed for speed, scalability,
-        and cost efficiency.
-      </p>
-    </div>
+  <div class="stats">
+    <div class="stat">TVL<br><strong>$2.1B</strong></div>
+    <div class="stat">Transactions<br><strong>48M+</strong></div>
+    <div class="stat">Validators<br><strong>1,284</strong></div>
   </div>
+
+  <canvas id="lineChart"></canvas>
 </section>
 
-<!-- ECOSYSTEM -->
-<section id="ecosystem" class="section">
-  <h2>21Million Ecosystem</h2>
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section reveal">
+  <h2>Portfolio Overview</h2>
 
   <div class="grid">
-    <div class="card glass">
-      <h3>Digital Assets</h3>
-      <p>Infrastructure for managing and monitoring blockchain assets.</p>
-    </div>
+    <div class="card">BTC <br><strong>42%</strong></div>
+    <div class="card">ETH <br><strong>31%</strong></div>
+    <div class="card">Stablecoins <br><strong>19%</strong></div>
+    <div class="card">Others <br><strong>8%</strong></div>
+  </div>
 
-    <div class="card glass">
-      <h3>Analytics</h3>
-      <p>Network insights, performance metrics, and transparency tools.</p>
-    </div>
+  <canvas id="pieChart"></canvas>
+</section>
 
-    <div class="card glass">
-      <h3>Governance</h3>
-      <p>Structured frameworks for decision-making and protocol growth.</p>
-    </div>
+<!-- CAREERS -->
+<section id="careers" class="section dark reveal">
+  <h2>Careers at 21Million</h2>
+  <p>
+    We are building the future of blockchain infrastructure.
+    Join a team focused on integrity, innovation, and impact.
+  </p>
+
+  <div class="grid">
+    <div class="card">Blockchain Engineer</div>
+    <div class="card">Security Analyst</div>
+    <div class="card">Product Designer</div>
   </div>
 </section>
 
 <!-- LEGAL -->
-<section id="legal" class="section dark">
+<section id="legal" class="section reveal">
   <h2>Legal & Transparency</h2>
-
-  <div class="legal-box">
-    <p>
-      All content, technology, and intellectual property displayed
-      on this platform belong to 21Million. Unauthorized use,
-      duplication, or misrepresentation is prohibited.
-    </p>
-
-    <p>
-      Blockchain technology involves risk. 21Million promotes
-      responsible usage, transparency, and informed decision-making.
-    </p>
-  </div>
+  <p>
+    All intellectual property, content, and technology on this platform
+    belong to <strong>21Million</strong>. Cryptocurrency involves risk.
+    Participation should be informed and responsible.
+  </p>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 21Million. All Rights Reserved.</p>
-  <div class="social">
-    <i class="fa-brands fa-github"></i>
-    <i class="fa-brands fa-x-twitter"></i>
-    <i class="fa-brands fa-discord"></i>
-  </div>
+  <p>© 2026 21Million. All rights reserved.</p>
+  <p class="group">Part of <strong>12Billion</strong> · A <strong>Matangi Group</strong> Initiative</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
