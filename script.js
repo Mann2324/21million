@@ -1,2 +1,5 @@
-// reserved for future animations or interactions
-console.log("21million loaded");
+document.querySelectorAll(".clickable").forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("active");
+  });
+});
