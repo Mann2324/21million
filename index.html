@@ -1,111 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>21Million — Blockchain Platform</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <meta charset="UTF-8" />
+  <title>21MILLION – The Future of Scarcity</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="nav">
-  <div class="logo">21Million</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#careers">Careers</a>
-    <a href="#legal">Legal</a>
-  </nav>
-</header>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>21MILLION</h1>
+    <p>The Future of Scarcity</p>
 
-<!-- HERO -->
-<section class="hero">
-  <h1 class="reveal">Building Trust in the Decentralized Economy</h1>
-  <p class="reveal delay">
-    Institutional-grade blockchain and cryptocurrency infrastructure
-    designed for security, transparency, and long-term value.
-  </p>
-</section>
+    <div class="price-box">
+      <span>$</span><span id="price">0.0000</span>
+    </div>
 
-<!-- ABOUT -->
-<section id="about" class="section reveal">
-  <h2>About 21Million</h2>
-  <p>
-    21Million is a blockchain-focused technology company inspired by
-    decentralization, transparency, and sustainable value creation.
-  </p>
-</section>
+    <div class="stats">
+      <div>
+        <h2 id="supply">0</h2>
+        <p>Total Supply</p>
+      </div>
+      <div>
+        <h2 id="holders">0</h2>
+        <p>Holders</p>
+      </div>
+      <div>
+        <h2 id="marketcap">$0</h2>
+        <p>Market Cap</p>
+      </div>
+    </div>
+  </section>
 
-<!-- DASHBOARD -->
-<section id="dashboard" class="section dark reveal">
-  <h2>Network Dashboard</h2>
-
-  <div class="stats">
-    <div class="stat">TVL<br><strong>$2.1B</strong></div>
-    <div class="stat">Transactions<br><strong>48M+</strong></div>
-    <div class="stat">Validators<br><strong>1,284</strong></div>
-  </div>
-
-  <canvas id="lineChart"></canvas>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section reveal">
-  <h2>Portfolio Overview</h2>
-
-  <div class="grid">
-    <div class="card">BTC <br><strong>42%</strong></div>
-    <div class="card">ETH <br><strong>31%</strong></div>
-    <div class="card">Stablecoins <br><strong>19%</strong></div>
-    <div class="card">Others <br><strong>8%</strong></div>
-  </div>
-
-  <canvas id="pieChart"></canvas>
-</section>
-
-<!-- CAREERS -->
-<section id="careers" class="section dark reveal">
-  <h2>Careers at 21Million</h2>
-  <p>
-    We are building the future of blockchain infrastructure.
-    Join a team focused on integrity, innovation, and impact.
-  </p>
-
-  <div class="grid">
-    <div class="card">Blockchain Engineer</div>
-    <div class="card">Security Analyst</div>
-    <div class="card">Product Designer</div>
-  </div>
-</section>
-
-<!-- LEGAL -->
-<section id="legal" class="section reveal">
-  <h2>Legal & Transparency</h2>
-  <p>
-    All intellectual property, content, and technology on this platform
-    belong to <strong>21Million</strong>. Cryptocurrency involves risk.
-    Participation should be informed and responsible.
-  </p>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2026 21Million. All rights reserved.</p>
-  <p class="group">Part of <strong>12Billion</strong> · A <strong>Matangi Group</strong> Initiative</p>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
