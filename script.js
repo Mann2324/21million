@@ -1,38 +1,49 @@
-// Reveal animation
-const reveals = document.querySelectorAll(".reveal");
+// BASE VALUES
+let price = 0.0125;        // starting price
+let holders = 1250;
+const totalSupply = 21000000;
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
+// PRICE UPDATE (every 2 seconds)
+function updatePrice() {
+  let volatility = (Math.random() * 0.002) - 0.001; // small up/down
+  let trend = 0.00015; // upward bias
+
+  price = price + volatility + trend;
+
+  if (price < 0.001) price = 0.001;
+
+  document.getElementById("price").innerText = price.toFixed(4);
+
+  // MARKET CAP
+  let marketCap = (price * totalSupply).toFixed(0);
+  document.getElementById("marketcap").innerText =
+    "$" + marketCap.toLocaleString();
+}
+
+// HOLDERS GROWTH
+function updateHolders() {
+  holders += Math.floor(Math.random() * 3); // slow organic growth
+  document.getElementById("holders").innerText =
+    holders.toLocaleString();
+}
+
+// COUNT-UP ANIMATION
+function animateSupply() {
+  let count = 0;
+  let interval = setInterval(() => {
+    count += 210000;
+    document.getElementById("supply").innerText =
+      count.toLocaleString();
+
+    if (count >= totalSupply) {
+      document.getElementById("supply").innerText =
+        totalSupply.toLocaleString();
+      clearInterval(interval);
     }
-  });
-});
+  }, 50);
+}
 
-reveals.forEach(el => observer.observe(el));
-
-// Line Chart
-new Chart(document.getElementById("lineChart"), {
-  type: "line",
-  data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-    datasets: [{
-      label: "Network Activity",
-      data: [120, 190, 300, 250, 400],
-      borderColor: "#22c55e",
-      backgroundColor: "rgba(34,197,94,0.1)"
-    }]
-  }
-});
-
-// Pie Chart
-new Chart(document.getElementById("pieChart"), {
-  type: "pie",
-  data: {
-    labels: ["BTC", "ETH", "Stable", "Others"],
-    datasets: [{
-      data: [42, 31, 19, 8],
-      backgroundColor: ["#22c55e", "#4ade80", "#86efac", "#bbf7d0"]
-    }]
-  }
-});
+// RUN
+animateSupply();
+setInterval(updatePrice, 2000);
+setInterval(updateHolders, 3000);
